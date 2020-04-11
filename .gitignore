@@ -1,0 +1,3 @@
+*/vault-certs/*
+*/terraform.tfstate*
+*/.terraform/*
