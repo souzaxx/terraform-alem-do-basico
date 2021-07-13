@@ -1,4 +1,6 @@
 */vault-certs/*
 */terraform.tfstate*
 */.terraform/*
+.terraform.lock.hcl
 terraform.tfstate*
+.terraform
