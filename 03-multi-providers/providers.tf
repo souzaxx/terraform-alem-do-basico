@@ -1,6 +1,5 @@
 provider "aws" {
   region = "us-east-2"
-  alias  = "dev"
   profile = "awsouza"
 }
 
