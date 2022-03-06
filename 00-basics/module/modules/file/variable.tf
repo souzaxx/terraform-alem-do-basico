@@ -1,14 +1,17 @@
 variable "filename" {
-  type    = string
-  default = null
+  description = "Nome do arquivo"
+  type        = string
+  default     = null
 }
 
 variable "content" {
-  type    = any
-  default = null
+  description = "Conteúdo do arquivo a ser criado"
+  type        = any
+  default     = null
 }
 
 variable "path" {
-  type    = string
-  default = null
+  description = "Caminho completo onde o arquivo será criado"
+  type        = string
+  default     = null
 }

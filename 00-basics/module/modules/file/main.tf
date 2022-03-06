@@ -1,17 +1,18 @@
 locals {
-  filename = var.filename != null ? var.filename : random_string.default_filename.id
-  content  = var.content != null ? var.content : data.http.default_content.body
-  path     = var.path != null ? var.path : path.root
+  filename          = var.filename != null ? var.filename : random_string.this.id
+  content           = var.content != null ? var.content : data.http.this.body
+  path              = var.path != null ? var.path : path.root
+  complete_filename = "${local.path}/${local.filename}"
 }
 
-resource "random_string" "default_filename" {
+resource "random_string" "this" {
   length  = 8
   special = false
   upper   = false
   number  = false
 }
 
-data "http" "default_content" {
+data "http" "this" {
   url = "https://baconipsum.com/api/?type=meat-and-filler"
 
   request_headers = {
@@ -20,7 +21,7 @@ data "http" "default_content" {
 }
 
 resource "local_file" "this" {
-  filename = "${local.path}/${local.filename}"
+  filename = local.complete_filename
   content  = local.content
 }
 
